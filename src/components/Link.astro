@@ -1,0 +1,12 @@
+---
+export interface LinkProps {
+    doc: any;
+}
+
+import { getSlugFromPath } from "../utils/get-slug-from-path";
+
+const { doc } = Astro.props as LinkProps
+const url = '/docs/' + getSlugFromPath(doc.file)
+---
+
+<a href={url}>{doc.frontmatter.title}</a>
