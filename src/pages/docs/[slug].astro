@@ -22,5 +22,7 @@ const { doc } = Astro.props;
 ---
 
 <Layout title={doc.frontmatter.title}>
-    <doc.Content/>
+    <article class="mx-auto prose lg:prose-lg prose-pre:p-1">
+        <doc.Content />
+    </article>
 </Layout>
