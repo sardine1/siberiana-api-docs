@@ -5,7 +5,6 @@ import { getSlugFromPath } from "../../utils/get-slug-from-path";
 
 export async function getStaticPaths() {
     const allDocs = await Astro.glob('../../content/**/*.md');
-
     const paths = allDocs.map((doc) => {
         const slug = getSlugFromPath(doc.file);
         return {
@@ -24,7 +23,9 @@ const { doc } = Astro.props;
 
 <Layout title={doc.frontmatter.title}>
     <Header />
-    <article class="max-w-2xl mx-auto prose lg:prose-lg prose-pre:p-1 py-8">
+
+    <article class="mx-auto prose lg:prose-xl prose-pre:p-1 py-8 lg:prose-h2:my-4 prose-stone">
+        <a href="/" class="font-medium hover:text-blue-500 no-underline">← Вернуться назад</a>
         <doc.Content />
     </article>
 </Layout>

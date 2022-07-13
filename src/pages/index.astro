@@ -8,19 +8,19 @@ const docsGeneral = await Astro.glob("../content/general/*.md");
 const docsResources = await Astro.glob("../content/resources/*.md");
 ---
 
-<Layout title="Public API">
+<Layout title="API Docs">
 	<Header />
-	<main class="flex flex-col gap-4 max-w-2xl mx-auto">
+	<main class="flex flex-col gap-4 prose lg:prose-xl mx-auto">
 		<div class="flex flex-col gap-2">
-			<h2 class="font-semibold text-3xl">Общие</h2>
-			<div class="flex flex-col">
+			<h2 class="text-3xl border-b py-2 border-dotted">General</h2>
+			<div class="flex flex-col gap-2">
 				{docsGeneral.map((doc) =>
 				<Link doc={doc} />)}
 			</div>
 		</div>
 		<div class="flex flex-col gap-2">
-			<h2 class="font-semibold text-3xl">Ресурсы</h2>
-			<div class="flex flex-col">
+			<h2 class="text-3xl border-b py-2 border-dotted">Resources</h2>
+			<div class="flex flex-col gap-2">
 				{docsResources.map((doc) =>
 				<Link doc={doc} />)}
 			</div>

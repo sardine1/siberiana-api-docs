@@ -1,27 +1,30 @@
 ---
-title: Объекты
-description: Список всех доступных идентификаторов объектов
+title: Objects
+description: Возвращает список идентификаторов всех доступных объектов.
 ---
 
-# {frontmatter.title}
+## {frontmatter.title}
 
-{frontmatter.description}
-
-```
-GET /public/collection/v1/objects/[objectID]
-```
-
-| Параметр | Формат |             Описание             |
-| :------: | :----: | :------------------------------: |
-| objectId |  0-9   | Уникальный идентификатор объекта |
-
-#### Примеры
-
-##### Запрос
+<p class="text-xl">{frontmatter.description}</p>
 
 ```
-GET /public/collection/v1/objects
+GET /collection/v1/objects
 ```
+
+| Параметр       | Формат                                                                                                                  | Описание                                                      |
+| -------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| `metadataDate` | DateTime (YYYY-MM-DD)                                                                                                   | Возвращает все объекты с обновленными данными после этой даты |
+| `sourceIds`    | целые числа, соответствующие идентификаторам отделов, например, 1 или 3 &#124; 9 &#124; 12, разделенные символом &#124; | Возвращает все объекты из определенной коллекции              |
+
+### Примеры
+
+#### Request
+
+```
+GET /collection/v1/objects
+```
+
+#### Response
 
 ```json
 {
@@ -38,11 +41,13 @@ GET /public/collection/v1/objects
 }
 ```
 
-##### Запрос
+#### Request
 
 ```
-GET /public/collection/v1/objects?collectionIds=1
+GET /collection/v1/objects?sourceIds=1
 ```
+
+#### Response
 
 ```json
 {
@@ -59,11 +64,13 @@ GET /public/collection/v1/objects?collectionIds=1
 }
 ```
 
-##### Запрос
+#### Request
 
 ```
-GET /public/collection/v1/objects?collectionIds=1|2|3
+GET /collection/v1/objects?sourceIds=1|2|3
 ```
+
+#### Response
 
 ```json
 {
@@ -80,11 +87,13 @@ GET /public/collection/v1/objects?collectionIds=1|2|3
 }
 ```
 
-##### Запрос
+#### Request
 
 ```
-GET /public/collection/v1/objects?metadataDate=2022-07-12
+GET /collection/v1/objects?metadataDate=2022-07-12
 ```
+
+#### Response
 
 ```json
 {
@@ -101,11 +110,13 @@ GET /public/collection/v1/objects?metadataDate=2022-07-12
 }
 ```
 
-##### Запрос
+#### Request
 
 ```
-GET /public/collection/v1/objects?metadataDate=2022-07-12&collectionIds=1|2|3
+GET /collection/v1/objects?metadataDate=2022-07-12&sourceIds=1|2|3
 ```
+
+#### Response
 
 ```json
 {
