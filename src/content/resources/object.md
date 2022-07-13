@@ -16,11 +16,13 @@ GET /public/collection/v1/objects
 
 #### Примеры
 
-##### Запрос
+##### Request
 
 ```
 GET /public/collection/v1/objects
 ```
+
+##### Response
 
 ```json
 {
@@ -37,11 +39,13 @@ GET /public/collection/v1/objects
 }
 ```
 
-##### Запрос
+##### Request
 
 ```
 GET /public/collection/v1/objects?collectionIds=1
 ```
+
+##### Response
 
 ```json
 {
@@ -58,12 +62,14 @@ GET /public/collection/v1/objects?collectionIds=1
 }
 ```
 
-##### Запрос
+##### Request
 
 ```
 GET /public/collection/v1/objects?collectionIds=1|2|3
 ```
 
+##### Response
+
 ```json
 {
     "total": 45, // Меньше, чем полное количество доступных объектов
@@ -79,12 +85,14 @@ GET /public/collection/v1/objects?collectionIds=1|2|3
 }
 ```
 
-##### Запрос
+##### Request
 
 ```
 GET /public/collection/v1/objects?metadataDate=2022-07-12
 ```
 
+##### Response
+
 ```json
 {
     "total": 45, // Меньше, чем полное количество доступных объектов
@@ -100,11 +108,13 @@ GET /public/collection/v1/objects?metadataDate=2022-07-12
 }
 ```
 
-##### Запрос
+##### Request
 
 ```
 GET /public/collection/v1/objects?metadataDate=2022-07-12&collectionIds=1|2|3
 ```
+
+##### Response
 
 ```json
 {

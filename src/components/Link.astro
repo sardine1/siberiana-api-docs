@@ -9,4 +9,4 @@ const { doc } = Astro.props as LinkProps
 const url = '/docs/' + getSlugFromPath(doc.file)
 ---
 
-<a href={url}>{doc.frontmatter.title}</a>
+<a href={url} class="font-medium text-blue-600 hover:underline">{doc.frontmatter.title}</a>

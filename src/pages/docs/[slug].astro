@@ -1,4 +1,5 @@
 ---
+import Header from "../../components/Header.astro";
 import Layout from "../../layouts/Layout.astro";
 import { getSlugFromPath } from "../../utils/get-slug-from-path";
 
@@ -22,7 +23,8 @@ const { doc } = Astro.props;
 ---
 
 <Layout title={doc.frontmatter.title}>
-    <article class="mx-auto prose lg:prose-lg prose-pre:p-1">
+    <Header />
+    <article class="max-w-2xl mx-auto prose lg:prose-lg prose-pre:p-1 py-8">
         <doc.Content />
     </article>
 </Layout>

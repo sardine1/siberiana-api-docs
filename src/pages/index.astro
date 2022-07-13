@@ -10,16 +10,20 @@ const docsResources = await Astro.glob("../content/resources/*.md");
 
 <Layout title="Public API">
 	<Header />
-	<main class="max-w-2xl mx-auto">
-		<div class="flex flex-col">
-			<h1 class="text-lg">Общие</h1>
-			{docsGeneral.map((doc) =>
-			<Link doc={doc} />)}
+	<main class="flex flex-col gap-4 max-w-2xl mx-auto">
+		<div class="flex flex-col gap-2">
+			<h2 class="font-semibold text-3xl">Общие</h2>
+			<div class="flex flex-col">
+				{docsGeneral.map((doc) =>
+				<Link doc={doc} />)}
+			</div>
 		</div>
-		<div class="flex flex-col">
-			<h1>Ресурсы</h1>
-			{docsResources.map((doc) =>
-			<Link doc={doc} />)}
+		<div class="flex flex-col gap-2">
+			<h2 class="font-semibold text-3xl">Ресурсы</h2>
+			<div class="flex flex-col">
+				{docsResources.map((doc) =>
+				<Link doc={doc} />)}
+			</div>
 		</div>
 	</main>
 </Layout>
